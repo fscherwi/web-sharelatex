@@ -2,6 +2,9 @@ language: node_js
 
 node_js:
     - "0.10"
+    - "0.12"
+    - "node"
+    - "lts/*"
 
 before_install:
     - npm install -g grunt-cli
@@ -17,3 +20,5 @@ services:
     - redis-server
     - mongodb
     
+dist: trusty
+sudo: false
