@@ -10,7 +10,7 @@ module.exports = HealthCheckController =
 	check: (req, res, next = (error) ->) ->
 		d = domain.create()
 		d.on "error", (error) ->
- 			logger.err err: error, "error in mocha"
+			logger.err err: error, "error in mocha"
 		d.run () ->
 			mocha = new Mocha(reporter: Reporter(res), timeout: 10000)
 			mocha.addFile("test/smoke/js/SmokeTests.js")
@@ -37,7 +37,7 @@ module.exports = HealthCheckController =
 				res.sendStatus 500
 			else
 				res.sendStatus 200
-		
+
 Reporter = (res) ->
 	(runner) ->
 		Base.call(this, runner)
@@ -69,4 +69,3 @@ Reporter = (res) ->
 				res.status(500).send(JSON.stringify(results, null, 2))
 			else
 				res.status(200).send(JSON.stringify(results, null, 2))
-

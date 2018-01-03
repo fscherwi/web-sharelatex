@@ -34,8 +34,8 @@ module.exports = ProjectCreationHandler =
 	_createBlankProject : (owner_id, projectName, projectHistoryId, callback = (error, project) ->)->
 		rootFolder = new Folder {'name':'rootFolder'}
 		project = new Project
-			 owner_ref          : new ObjectId(owner_id)
-			 name               : projectName
+			owner_ref          : new ObjectId(owner_id)
+			name               : projectName
 		project.overleaf.history.id = projectHistoryId
 		if Settings.currentImageName?
 			project.imageName = Settings.currentImageName
@@ -102,5 +102,3 @@ metrics.timeAsyncMethod(
 	'mongo.ProjectCreationHandler',
 	logger
 )
-
-

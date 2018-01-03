@@ -4,7 +4,7 @@ define [
 	App.factory 'ccUtils', () ->
 		defaultFormat = /(\d{1,4})/g;
 		defaultInputFormat =  /(?:^|\s)(\d{4})$/
-		
+
 		cards = [
 			# Credit cards
 			{
@@ -142,9 +142,9 @@ define [
 		return {
 			fromNumber: cardFromNumber
 			fromType: cardFromType
-			cardType: cardType 
+			cardType: cardType
 			formatExpiry: formatExpiry
-			formatCardNumber: formatCardNumber  
+			formatCardNumber: formatCardNumber
 			defaultFormat: defaultFormat
 			defaultInputFormat: defaultInputFormat
 			parseExpiry: parseExpiry
@@ -167,7 +167,7 @@ define [
 				cursor = $target.prop('selectionStart')
 			catch error
 				cursor = null
-			
+
 			last = $target.val()
 			$target.val(value)
 
@@ -307,7 +307,7 @@ define [
 				groups.join(' ')
 
 		parseCardNumber = (value) ->
-    		if value? then value.replace(/\s/g, '') else value
+			if value? then value.replace(/\s/g, '') else value
 
 		# Format Expiry
 		reFormatExpiry = (e) ->
@@ -382,7 +382,7 @@ define [
 		parseExpiry = (value) ->
 			if value?
 				dateAsObj = ccUtils.parseExpiry(value)
-				
+
 				return unless dateAsObj?
 
 				expiry = new Date dateAsObj.year, dateAsObj.month - 1
@@ -493,7 +493,7 @@ define [
 			restrictCVC
 			setCardType
 		}
-		
+
 	App.directive "ccFormatExpiry", (ccFormat) ->
 		restrict: "A"
 		require: "ngModel"
@@ -533,7 +533,3 @@ define [
 			el.on "paste", 		ccFormat.reFormatCVC
 			el.on "change", 	ccFormat.reFormatCVC
 			el.on "input", 		ccFormat.reFormatCVC
-
-
-
-	

@@ -42,7 +42,7 @@ define [
 			editorDoc = @ace?.getSession().getDocument()
 			editorDoc?.off "change", @_checkConsistency
 			@ide.$scope.$emit 'document:closed', @doc
-		
+
 		submitOp: (args...) -> @doc?.submitOp(args...)
 
 		_checkConsistency: () ->
@@ -81,13 +81,13 @@ define [
 
 		hasBufferedOps: () ->
 			@doc?.hasBufferedOps()
-		
+
 		setTrackingChanges: (track_changes) ->
 			@doc.track_changes = track_changes
-		
+
 		getTrackingChanges: () ->
 			!!@doc.track_changes
-		
+
 		setTrackChangesIdSeeds: (id_seeds) ->
 			@doc.track_changes_id_seeds = id_seeds
 
@@ -305,11 +305,11 @@ define [
 
 		_bindToShareJsDocEvents: () ->
 			@doc.on "error", (error, meta) => @_onError error, meta
-			@doc.on "externalUpdate", (update) => 
+			@doc.on "externalUpdate", (update) =>
 				@ide.pushEvent "externalUpdate",
 					doc_id: @doc_id
 				@trigger "externalUpdate", update
-			@doc.on "remoteop", (args...) => 
+			@doc.on "remoteop", (args...) =>
 				@ide.pushEvent "remoteop",
 					doc_id: @doc_id
 				@trigger "remoteop", args...
@@ -376,7 +376,7 @@ define [
 				setTimeout () => @emit "ranges:dirty"
 			else
 				@emit "ranges:dirty"
-		
+
 		_catchUpRanges: (changes = [], comments = []) ->
 			# We've just been given the current server's ranges, but need to apply any local ops we have.
 			# Reset to the server state then apply our local ops again.

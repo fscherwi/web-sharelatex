@@ -98,7 +98,7 @@
     "grunt-available-tasks": "^0.6.3",
     "grunt-bunyan": "^0.5.0",
     "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-coffee": "^2.0.0",
+    "grunt-contrib-coffee": "^1.0.0",
     "grunt-contrib-less": "^1.4.1",
     "grunt-contrib-requirejs": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",

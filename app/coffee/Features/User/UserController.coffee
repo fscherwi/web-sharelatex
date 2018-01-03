@@ -158,8 +158,8 @@ module.exports = UserController =
 					logger.log user: user, "passwords do not match"
 					res.send
 						message:
-						  type:'error'
-						  text:'Your passwords do not match'
+							type:'error'
+							text:'Your passwords do not match'
 				else
 					logger.log user: user, "password changed"
 					AuthenticationManager.setUserPassword user._id, newPassword1, (error) ->
@@ -174,5 +174,5 @@ module.exports = UserController =
 				logger.log user_id: user_id, "current password wrong"
 				res.send
 					message:
-					  type:'error'
-					  text:'Your old password is wrong'
+						type:'error'
+						text:'Your old password is wrong'

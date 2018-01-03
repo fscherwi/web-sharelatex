@@ -155,7 +155,7 @@ define [
 			@editor.completers = [
 				commandCompleter
 				SnippetCompleter
-                PackageCompleter
+				PackageCompleter
 				ReferencesCompleter
 				LabelsCompleter
 				GraphicsCompleter

@@ -5,7 +5,7 @@ define [
 
 	_decodeHTMLEntities = (str) ->
 		str.replace /&#(\d+);/g, (match, dec) ->
-    		String.fromCharCode dec;
+			String.fromCharCode dec;
 
 	_getWrappedWordsString = (baseStr, wrapperElName, minLength) ->
 		minLength = minLength || DEF_MIN_LENGTH
