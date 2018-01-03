@@ -21,4 +21,14 @@ services:
     - mongodb
     
 dist: trusty
+
 sudo: false
+
+os:
+    - linux
+    - osx
+
+allow_failures:
+    node_js:
+        - "0.10"
+        - "0.12" 
