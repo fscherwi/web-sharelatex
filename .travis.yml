@@ -32,3 +32,7 @@ matrix:
     allow_failures:
         - node_js: "0.10"
         - node_js: "0.12"
+
+git:
+  depth: 10
+  
